@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: my-dep
+  labels:
+    app: my-image
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-image
+  template:
+    metadata:
+      labels:
+        app: my-image
+    containers:
+      - name: test
+        image: sharath441993/test:latest
+        ports:
+         - containerPort: 8080
