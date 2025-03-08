@@ -1,20 +1,19 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-dep
   labels:
-    app: my-image
+    app: my-deploy
+  name: my-deploy
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
-      app: my-image
+      app: my-deploy
   template:
     metadata:
       labels:
-        app: my-image
-    containers:
-      - name: test
-        image: sharath441993/test:latest
-        ports:
-         - containerPort: 8080
+        app: my-deploy
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
