@@ -12,7 +12,7 @@ jobs:
       - name: Print Message
         run: echo "Hello world GA testing"
   run-pytest:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
        - name: Checkout code
          uses: actions/checkout@v3
